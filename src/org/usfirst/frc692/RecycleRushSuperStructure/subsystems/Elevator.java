@@ -49,6 +49,68 @@ public class Elevator extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    private static final int movingUp = 1;
+    private static final int movingDown = -1;
+    private static final int donePosition = 0;
+    //these are constants to state that the elevator is moving in Up/Down direction 
+    //AC 1/19/15
+    
+    private int elevatorState;
+    //variable that is set to a constant to tell state
+    //AC 1/19/15
+    
+    public void setElevatorMovingUp()
+    {
+    	elevatorState = movingUp;
+    }
+    //elevator is moving up
+    //AC 1/19/15
+    
+    public void setElevatorMovingDown()
+    {
+    	elevatorState = movingDown;
+    }
+    //elevator is moving down
+    //AC 1/19/15
+    
+    public void setDonePosition()
+    {
+    	elevatorState = donePosition;
+    }
+
+    //elevator is at done position
+    //done position is intended floor
+    //AC 1/19/15
+    
+    public boolean isMovingUp()
+    {
+    	if(elevatorState == 1)
+    	{
+    		return true;
+    	}
+    	else
+    	{
+    		return false;
+    	}
+    }
+    //boolean to check if elevator is moving up 
+    //true = up 
+    //AC 1/19/15
+    
+    public boolean isMovingDown()
+    {
+    	if (elevatorState == -1)
+    	{
+    		return true;
+    	}
+    	else
+    	{
+    		return false;
+    	}
+    }
+    //boolean to check if elevator is moving down
+    //true = down
+    //AC 1/19/15
     
     public void releaseFlap()
     {

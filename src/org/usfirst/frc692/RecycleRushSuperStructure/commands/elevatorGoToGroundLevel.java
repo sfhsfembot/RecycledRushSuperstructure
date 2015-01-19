@@ -38,14 +38,20 @@ public class  elevatorGoToGroundLevel extends Command {
     	if(Robot.elevator.onStepLevel())
     	{
     		Robot.elevator.elevatorDown();
+    		Robot.elevator.setElevatorMovingDown();
+    		//sets elevator as moving down (-1)
+    		//AC 1/19/15
     		System.out.println("Elevator on step level!");
-    		System.out.println("Going down!");
+    		System.out.println("Going down to ground!");
     	}
     	else if(Robot.elevator.onTopLoadLevel())
     	{
     		Robot.elevator.elevatorDown();
+    		Robot.elevator.setElevatorMovingDown();
+    		//sets elevator as moving down
+    		//AC 1/19/15
     		System.out.println("Elevator on top level!");
-    		System.out.println("Going down!");
+    		System.out.println("Going down to ground!");
     	}
     }
 
@@ -53,6 +59,7 @@ public class  elevatorGoToGroundLevel extends Command {
     protected boolean isFinished() {
         if(Robot.elevator.onGroundFloor())
         {
+        	Robot.elevator.setDonePosition();
         	System.out.println("Elevator on ground floor!");
         	System.out.println("Elevator stopping!");
         	return true;
@@ -65,12 +72,24 @@ public class  elevatorGoToGroundLevel extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.elevator.elevatorStop();
+    	System.out.println("Elevator has reached the end method!");
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	//INTERRUPT HERE!
+    	if(Robot.elevator.isMovingDown() && !Robot.elevator.onGroundFloor())
+    		//if robot is set to moving down and not on ground floor
+    		// ! = not
+    	{
+    		Robot.elevator.elevatorDown();
+    		System.out.println("Going down to ground!");
+    	}
+    	end();
+    	//if elevator is moving down, keep going down until hits the ground level
+    	//calls end method to stop
+    	//AC 1/19/15
     }
     /*
      * if elevator is on top or step level the elevator will go down 

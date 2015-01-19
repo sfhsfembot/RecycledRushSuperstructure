@@ -69,13 +69,27 @@ public class OI {
 
         SmartDashboard.putData("bringInToteOnCaterpillar", new bringInToteOnCaterpillar());
 
+        SmartDashboard.putData("recycleBinClawOpen", new recycleBinClawOpen());
+
+        SmartDashboard.putData("bringOutToteOnCaterpillar", new bringOutToteOnCaterpillar());
+
+        SmartDashboard.putData("dispenseAtStep", new dispenseAtStep());
+
         SmartDashboard.putData("gatherTote", new gatherTote());
 
         SmartDashboard.putData("caterpillarStop", new caterpillarStop());
 
+        SmartDashboard.putData("resetToteCycle", new resetToteCycle());
+
+        SmartDashboard.putData("reverseCaterpillar", new reverseCaterpillar());
+
         SmartDashboard.putData("automatedElevator", new automatedElevator());
 
+        SmartDashboard.putData("dropRecycleBin", new dropRecycleBin());
+
         SmartDashboard.putData("elevatorStop", new elevatorStop());
+
+        SmartDashboard.putData("recycleBinClawBottom", new recycleBinClawBottom());
 
         SmartDashboard.putData("gathererDown", new gathererDown());
 

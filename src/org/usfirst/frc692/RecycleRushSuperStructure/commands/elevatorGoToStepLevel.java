@@ -38,12 +38,18 @@ public class  elevatorGoToStepLevel extends Command {
     	if(Robot.elevator.onGroundFloor())
     	{
     		Robot.elevator.elevatorUp();
+    		Robot.elevator.setElevatorMovingUp();
+    		//sets elevator is moving up
+    		//AC 1/19/15
     		System.out.println("Elevator on ground floor!");
     		System.out.println("Going up to step level!");
     	}
     	else if(Robot.elevator.onTopLoadLevel())
     	{
     		Robot.elevator.elevatorDown();
+    		Robot.elevator.setElevatorMovingDown();
+    		//elevator is moving down
+    		//AC 1/19/15
     		System.out.println("Elevator on top floor!");
     		System.out.println("Going down to step level!");
     	}
@@ -57,6 +63,7 @@ public class  elevatorGoToStepLevel extends Command {
     protected boolean isFinished() {
         if(Robot.elevator.onStepLevel())
         {
+        	Robot.elevator.setDonePosition();
         	System.out.println("Elevator on step floor!");
         	System.out.println("Elevator stopping!");
         	return true;
@@ -70,12 +77,27 @@ public class  elevatorGoToStepLevel extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	Robot.elevator.elevatorStop();
+    	System.out.println("Elevator has reached end method!");
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	//NEED TO ADD AN INTERRUPT CODE
+    	if(Robot.elevator.isMovingDown() && !Robot.elevator.onStepLevel())
+    		//if robot is moving down and not on step level
+    	{
+    		Robot.elevator.elevatorDown();
+    		System.out.println("Going down to step level!");
+    	}
+    	else if(Robot.elevator.isMovingUp() && !Robot.elevator.onStepLevel())
+    	{
+    		Robot.elevator.elevatorUp();
+    		System.out.println("Going up to step level!");
+    	}
+    	end();
+    	//if elevator is moving up when interrupted keep moving up until at step
+    	//if elevator is moving down when interrupted keep moving down until at step
+    	//AC 1/19/15
     }
     //if elevator is on top level when called, platform will go down
     //if elevator is on bottom level when called, platform will go up

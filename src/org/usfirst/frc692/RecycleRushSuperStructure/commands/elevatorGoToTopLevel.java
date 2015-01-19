@@ -38,14 +38,16 @@ public class  elevatorGoToTopLevel extends Command {
     	if(Robot.elevator.onStepLevel())
     	{
     		Robot.elevator.elevatorUp();
+    		Robot.elevator.setElevatorMovingUp();
     		System.out.println("Elevator on step level!");
-    		System.out.println("Going up!");
+    		System.out.println("Going up to top level!");
     	}
     	else if(Robot.elevator.onGroundFloor())
     	{
     		Robot.elevator.elevatorUp();
+    		Robot.elevator.setElevatorMovingUp();
     		System.out.println("Elevator on ground floor!");
-    		System.out.println("Going up!");
+    		System.out.println("Going up to top level!");
     	}
     }
 
@@ -53,6 +55,7 @@ public class  elevatorGoToTopLevel extends Command {
     protected boolean isFinished() {
         if(Robot.elevator.onTopLoadLevel())
         {
+        	Robot.elevator.setDonePosition();
         	System.out.println("Elevator on top floor!");
         	System.out.println("Stopping!");
         	return true;
@@ -65,11 +68,19 @@ public class  elevatorGoToTopLevel extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.elevator.elevatorStop();
+    	System.out.println("Elevator has reached end method!");
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	if(Robot.elevator.isMovingUp() && !Robot.elevator.onTopLoadLevel())
+    	{
+    		Robot.elevator.elevatorUp();
+    		System.out.println("Going up to top level!");
+    	}
+    	end();
     }
     /*
      * If elevator is on ground or step it goes up
