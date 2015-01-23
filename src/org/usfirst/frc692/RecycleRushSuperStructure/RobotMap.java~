@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import java.util.Vector;
@@ -53,6 +54,8 @@ public class RobotMap {
     public static DoubleSolenoid elevatorbackStopRelease;
     public static DigitalInput elevatorelevatorLevelGroundLimit;
     public static Compressor pneumaticscompressorOne;
+    public static SpeedController rollyGrabberrollyGrabberMotorOne;
+    public static SpeedController rollyGrabberRollyGrabberMotorTwo;
     public static DigitalInput recycleBinClawrecycleBinDropLimit;
     public static Encoder recycleBinClawrecycleBinClawEncoder;
     public static DoubleSolenoid recycleBinClawrecycleBinClawOpenCloser;
@@ -124,6 +127,12 @@ public class RobotMap {
         
         pneumaticscompressorOne = new Compressor(0);
         
+        
+        rollyGrabberrollyGrabberMotorOne = new Victor(8);
+        LiveWindow.addActuator("RollyGrabber", "rollyGrabberMotorOne", (Victor) rollyGrabberrollyGrabberMotorOne);
+        
+        rollyGrabberRollyGrabberMotorTwo = new Victor(9);
+        LiveWindow.addActuator("RollyGrabber", "RollyGrabberMotorTwo", (Victor) rollyGrabberRollyGrabberMotorTwo);
         
         recycleBinClawrecycleBinDropLimit = new DigitalInput(15);
         LiveWindow.addSensor("RecycleBinClaw", "recycleBinDropLimit", recycleBinClawrecycleBinDropLimit);

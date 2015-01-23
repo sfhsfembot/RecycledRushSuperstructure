@@ -65,11 +65,16 @@ public class  bringInToteOnCaterpillar extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.caterpillar.caterpillarStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	while(!Robot.gatherer.toteDetector())
+    	{
+    		Robot.caterpillar.caterpillarForward();
+    	}
     }
     // caterpillar takes in tote and stops when the tote is fully loaded.
     // ND 1/16/15

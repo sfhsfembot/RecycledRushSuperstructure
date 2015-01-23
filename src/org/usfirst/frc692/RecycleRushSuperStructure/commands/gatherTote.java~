@@ -38,7 +38,8 @@ public class gatherTote extends CommandGroup {
     	addSequential(new gathererDown());
     	//turn on vacuum to suck in 
     	addSequential(new gathererUp());
-    	addSequential(new gathererRectract());
+    	addParallel(new gathererRectract());
+    	addSequential(new automatedElevator());
     	//automated gathering code 
     	//AC 1/17/15
     }

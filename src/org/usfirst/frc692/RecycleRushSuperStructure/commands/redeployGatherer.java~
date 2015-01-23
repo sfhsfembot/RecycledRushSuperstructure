@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class gatherTote extends CommandGroup {
+public class redeployGatherer extends CommandGroup {
     
-    public  gatherTote() {
+    public  redeployGatherer() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -33,14 +33,10 @@ public class gatherTote extends CommandGroup {
         // would require.
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
-        // arm.    	
-    	addSequential(new gathererDeploy());
-    	addSequential(new gathererDown());
-    	//turn on vacuum to suck in 
+        // arm.
+    	addSequential(new reverseCaterpillar());
     	addSequential(new gathererUp());
-    	addParallel(new gathererRectract());
-    	addSequential(new automatedElevator());
-    	//automated gathering code 
-    	//AC 1/17/15
+    	addSequential(new gathererRectract());
+    	addSequential(new gathererDeploy());
     }
 }

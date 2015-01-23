@@ -36,6 +36,9 @@ public class resetToteCycle extends CommandGroup {
         // arm.
     	addSequential(new elevatorGoToGroundLevel());
     	addSequential(new BackstopUp());
+    	addSequential(new gathererUp());
+    	addSequential(new gathererRectract());
+    	addSequential(new recycleBinClawUp());
     	//resets elevator after cycle is complete
     	//AC 1/19/15
     	
