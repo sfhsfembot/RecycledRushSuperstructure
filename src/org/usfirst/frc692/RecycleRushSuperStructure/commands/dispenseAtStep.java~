@@ -38,7 +38,7 @@ public class dispenseAtStep extends CommandGroup {
     	addSequential(new Flapping());
     	addSequential(new elevatorGoToStepLevel());
     	addSequential(new bringOutToteOnCaterpillar());
-    	//brings backstop out of the way and tote is dispense at the step level
+    	//brings backstop out of the way and tote is dispense at the ground level
     	addSequential(new resetToteCycle());
     }
 }

@@ -79,7 +79,7 @@ public class  elevatorGoToGroundLevel extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	if(Robot.elevator.isMovingDown() && !Robot.elevator.onGroundFloor())
+    	while(Robot.elevator.isMovingDown() && !Robot.elevator.onGroundFloor())
     		//if robot is set to moving down and not on ground floor
     		// ! = not
     	{

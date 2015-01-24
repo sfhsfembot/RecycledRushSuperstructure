@@ -75,7 +75,7 @@ public class  elevatorGoToTopLevel extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	if(Robot.elevator.isMovingUp() && !Robot.elevator.onTopLoadLevel())
+    	while(Robot.elevator.isMovingUp() && !Robot.elevator.onTopLoadLevel())
     	{
     		Robot.elevator.elevatorUp();
     		System.out.println("Going up to top level!");

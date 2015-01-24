@@ -34,7 +34,7 @@ public class  winchAtFourTotes extends Command {
     }
 
     protected void execute() {
-    	if(Robot.recycleBinClaw.getRawCount() < 240)
+    	while(Robot.recycleBinClaw.getRawCount() < 240)
     	{
     		Robot.recycleBinClaw.winchDown();
     	}
@@ -60,5 +60,9 @@ public class  winchAtFourTotes extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	while(Robot.recycleBinClaw.getRawCount() != 240)
+    	{
+    		Robot.recycleBinClaw.winchDown();
+    	}
     }
 }

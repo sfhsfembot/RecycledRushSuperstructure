@@ -35,7 +35,7 @@ public class  winchAtThreeTotes extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.recycleBinClaw.getRawCount() < 180)
+    	while(Robot.recycleBinClaw.getRawCount() < 180)
     	{
     		Robot.recycleBinClaw.winchDown();
     	}
@@ -61,5 +61,9 @@ public class  winchAtThreeTotes extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	while(Robot.recycleBinClaw.getRawCount() != 180)
+    	{
+    		Robot.recycleBinClaw.winchDown();
+    	}
     }
 }

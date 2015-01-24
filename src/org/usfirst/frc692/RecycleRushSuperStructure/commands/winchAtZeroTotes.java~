@@ -35,7 +35,7 @@ public class  winchAtZeroTotes extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.recycleBinClaw.getRawCount() < 0)
+    	while(Robot.recycleBinClaw.getRawCount() < 0)
     		//0 is ground
     	{
     		Robot.recycleBinClaw.winchDown();
@@ -62,5 +62,9 @@ public class  winchAtZeroTotes extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	while(Robot.recycleBinClaw.getRawCount() != 0.0)
+    	{
+    		Robot.recycleBinClaw.winchDown();
+    	}
     }
 }
