@@ -41,4 +41,13 @@ public class dispenseAtStep extends CommandGroup {
     	//brings backstop out of the way and tote is dispense at the ground level
     	addSequential(new resetToteCycle());
     }
+    /*
+     * dispenses totes at the step:
+     * -backstop goes down
+     * -flappers release totes
+     * -elevator goes to step level
+     * -caterpillar poops totes out
+     * -resets
+     * AC 1/24/15
+     */
 }

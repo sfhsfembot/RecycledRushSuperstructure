@@ -34,7 +34,7 @@ public class  winchAtFourTotes extends Command {
     }
 
     protected void execute() {
-    	while(Robot.recycleBinClaw.getRawCount() < 240)
+    	while(Robot.recycleBinClaw.getRawCount() > 240)
     	{
     		Robot.recycleBinClaw.winchDown();
     	}
@@ -65,4 +65,9 @@ public class  winchAtFourTotes extends Command {
     		Robot.recycleBinClaw.winchDown();
     	}
     }
+    /*
+     * winch goes down 
+     * when interrupted it goes down until it gets to intended floor
+     * AC 1/24/15
+     */
 }

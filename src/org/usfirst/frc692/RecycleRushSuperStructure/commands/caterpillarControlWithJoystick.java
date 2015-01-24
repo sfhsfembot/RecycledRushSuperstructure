@@ -54,4 +54,8 @@ public class  caterpillarControlWithJoystick extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
+    /*
+     * gets joystick value when moves side to side and inputs into caterpillar motor
+     *AC 1/24/15
+     */
 }

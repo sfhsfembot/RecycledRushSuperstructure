@@ -42,5 +42,8 @@ public class automatedElevator extends CommandGroup {
     		addSequential(new elevatorGoToTopLevel());
     		addSequential(new elevatorGoToGroundLevel());
     	}
+    	//caterpillar becomes activated when tote detecter is pressed 
+    	//elevator goes to top level and then goes down
+    	//AC 1/24/15
     }
 }

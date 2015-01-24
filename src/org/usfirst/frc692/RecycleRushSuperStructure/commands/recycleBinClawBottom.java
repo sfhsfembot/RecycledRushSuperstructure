@@ -65,4 +65,6 @@ public class  recycleBinClawBottom extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
+    //brings winch to bottom 
+    //AC 1/24/15
 }

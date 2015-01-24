@@ -51,4 +51,8 @@ public class  recycleBinClawClose extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
+    /*
+     * closes recycle bin claw
+     *AC 1/24/15
+     */
 }

@@ -52,4 +52,6 @@ public class  elevatorDownWithoutLimitSwitch extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
+    //elevator moves disregarding limit switch
+    //AC 1/24/15
 }

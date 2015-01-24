@@ -95,26 +95,36 @@ public class RecycleBinClaw extends Subsystem {
     {
     	return recycleBinClawEncoder.get();
     }
+    //gets value of encoder
+    //AC 1/24/15
     
     public double getRawCount()
     {
     	return recycleBinClawEncoder.getRaw();
     }
+    //gets value of encoder without scale factor
+    //AC 1/24/15
     
     public double getDistance()
     {
     	return recycleBinClawEncoder.getDistance();
     }
+    //gets distance traveled
+    //AC 1/24/15
     
     public double getRate()
     {
     	return recycleBinClawEncoder.getRate();
     }
+    //gets rate of motor
+    //AC 1/24/15
     
     public void encoderReset()
     {
     	recycleBinClawEncoder.reset();
     }
+    //resets encoder count
+    //AC 1/24/15
     
     public boolean stopped()
     {
@@ -127,10 +137,14 @@ public class RecycleBinClaw extends Subsystem {
     		return false;
     	}
     }
+    //if encoder has stopped counting return true
+    //AC 1/24/15
     
     public void winchStop()
     {
     	recycleBinWinchMotor.set(0.0);
     }
+    //stops winch motor
+    //AC 1/24/15
 }
 

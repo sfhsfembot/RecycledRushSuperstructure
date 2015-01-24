@@ -215,6 +215,7 @@ public class Elevator extends Subsystem {
     {
     	elevatorPlatformUpDownMotor.set(x);
     }
-  
+    //takes value from joystick and inputs in elevator motor\
+    //AC 1/24/15  
 }
 

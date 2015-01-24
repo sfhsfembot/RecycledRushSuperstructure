@@ -40,6 +40,8 @@ public class  elevatorTakeJoystickValie extends Command {
     	double oppositeValue = value * -1.0;
     	Robot.elevator.takeJoystickValue(oppositeValue);
     }
+    //takes joystick value and inputs into elevator
+    //AC 1/24/15
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

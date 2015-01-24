@@ -37,7 +37,7 @@ public class  bringInToteOnCaterpillar extends Command {
     protected void execute() {
     	if(Robot.gatherer.isGathererReadyToRetract())
     	{
-    		Robot.caterpillar.caterpillarReverse();
+    		Robot.caterpillar.caterpillarForward();
     		System.out.println("Caterpillar activated!");
     	}
     	else 
@@ -46,7 +46,10 @@ public class  bringInToteOnCaterpillar extends Command {
     		System.out.println("Caterpillar is not active.");
     		System.out.println("Caterpillar is stopped");
     	}
-    	
+    	/*
+    	 * when gatherer is retracting the caterpillar activates 
+    	 * AC 1/24/15
+    	 */
     }
 
     // Make this return true when this Command no longer needs to run execute()

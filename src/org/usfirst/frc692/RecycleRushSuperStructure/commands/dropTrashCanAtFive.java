@@ -38,4 +38,9 @@ public class dropTrashCanAtFive extends CommandGroup {
         addSequential(new recycleBinClawOpen());
         addParallel(new recycleBinClawUp());
     }
+    /*
+     * winch goes to the five level 
+     *dispenses RB
+     *AC 1/24/15
+     */
 }

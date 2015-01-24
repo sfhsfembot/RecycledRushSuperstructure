@@ -37,5 +37,10 @@ public class dropTrashCanAtFour extends CommandGroup {
     	addSequential(new winchAtFourTotes());
         addSequential(new recycleBinClawOpen());
         addParallel(new recycleBinClawUp());
+        /*
+         * winch goes to the four level 
+         *dispenses RB
+         *AC 1/24/15
+         */
     }
 }

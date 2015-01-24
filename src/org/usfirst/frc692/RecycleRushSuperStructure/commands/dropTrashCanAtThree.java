@@ -37,5 +37,10 @@ public class dropTrashCanAtThree extends CommandGroup {
     	addSequential(new winchAtThreeTotes());
         addSequential(new recycleBinClawOpen());
         addParallel(new recycleBinClawUp());
+        /*
+         * winch goes to the three level 
+         *dispenses RB
+         *AC 1/24/15
+         */
     }
 }

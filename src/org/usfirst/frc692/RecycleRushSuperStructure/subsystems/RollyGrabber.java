@@ -46,6 +46,8 @@ public class RollyGrabber extends Subsystem {
     	rollyGrabberMotorOne.set(x);
     	rollyGrabberMotorTwo.set(x);
     }
+    //takes value from joystick and inputs in rolly grabber motors
+    //AC 1/24/15
     
 }
 

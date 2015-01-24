@@ -68,5 +68,8 @@ public class Caterpillar extends Subsystem {
     {
     	caterpillarBelt.set(x);
     }
+    //takes value of the joystick and inputs it into the caterpillar belt motor
+    //AC 1/24/15
+    
 }
 

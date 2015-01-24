@@ -54,4 +54,6 @@ public class  rollyGrabberControl extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
+    //rolly grabber is controlled by joystick
+    //AC 1/24/15
 }

@@ -56,6 +56,6 @@ public class  bringOutToteOnCaterpillar extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
-    //moves caterpillar forward, disregarding limit switch 
+    //poops tote out
     //AC 1/19/15
 }

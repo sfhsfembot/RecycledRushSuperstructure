@@ -38,4 +38,9 @@ public class dropTrashCanAtOne extends CommandGroup {
         addSequential(new recycleBinClawOpen());
         addParallel(new recycleBinClawUp());
     }
+    /*
+     * winch goes to the one level 
+     *dispenses RB
+     *AC 1/24/15
+     */
 }

@@ -37,6 +37,11 @@ public class dropTrashCanAtZero extends CommandGroup {
         addSequential(new winchAtZeroTotes());
         addSequential(new recycleBinClawOpen());
         addParallel(new recycleBinClawUp());
+        /*
+         * winch goes to the ground level 
+         *dispenses RB
+         *AC 1/24/15
+         */
     }
 
 }

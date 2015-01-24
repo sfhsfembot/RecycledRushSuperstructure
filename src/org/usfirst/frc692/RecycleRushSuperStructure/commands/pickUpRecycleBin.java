@@ -39,5 +39,7 @@ public class pickUpRecycleBin extends CommandGroup {
     	addSequential(new recycleBinClawBottom());
     	addSequential(new recycleBinClawClose());
     	addSequential(new recycleBinClawUp());
+    	//picks up RB from ground
+    	//AC 1/24/15
     }
 }

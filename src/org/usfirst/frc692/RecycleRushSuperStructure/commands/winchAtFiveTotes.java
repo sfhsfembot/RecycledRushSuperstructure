@@ -35,7 +35,7 @@ public class  winchAtFiveTotes extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	while(Robot.recycleBinClaw.getRawCount() < 300)
+    	while(Robot.recycleBinClaw.getRawCount() > 300)
     	{
     		Robot.recycleBinClaw.winchDown();
     	}
@@ -66,4 +66,9 @@ public class  winchAtFiveTotes extends Command {
     		Robot.recycleBinClaw.winchDown();
     	}
     }
+    /*
+     * winch goes down 
+     * when interrupted it goes down until it gets to intended floor
+     * AC 1/24/15
+     */
 }
