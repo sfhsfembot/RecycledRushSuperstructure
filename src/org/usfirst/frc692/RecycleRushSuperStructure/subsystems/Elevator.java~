@@ -210,6 +210,11 @@ public class Elevator extends Subsystem {
      * Ground
      * AC 1/16/15
      */
+    
+    public void takeJoystickValue(double x)
+    {
+    	elevatorPlatformUpDownMotor.set(x);
+    }
   
 }
 
